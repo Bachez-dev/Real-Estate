@@ -174,7 +174,7 @@ body {
       width: 19ch;
       color: white;
       position: absolute;
-      top: 36%;
+      top: 20%;
     }
 
     .txt-one {
@@ -182,8 +182,8 @@ body {
       color: white;
       margin: 20px 0;
       position: absolute;
-      top: 20%;
-      font-size: 12px;
+      top: 45%;
+      font-size: 11px;
       width: 60ch;
       line-height: 1.5;
     }
@@ -192,18 +192,99 @@ body {
 
 
   .get {
-    width: 120px;
-    height: 30px;
-    border-radius: 30px;
-    background: white;
+    width: 650px;
+    height: 150px;
+    border-radius: 5px;
+    /* background: #ffffff; */
+    border: 1px solid #fff;
     color: #101010;
     padding: 0 20px;
     font-weight: 600;
     position: absolute;
-    top: 65%;
+    top: 70%;
     border: none;
     font-size: 11px;
+    cursor: pointer;
+
+    .features {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .feature-card {
+      background: rgb(255, 255, 255);
+      /* glass effect */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 5px;
+      width: 240px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      color: #101010;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-card .icon {
+      font-size: 11px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .icon i{
+      font-size: 11px;
+    }
+
+    .feature-card h3 {
+      font-size: 13px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #101010;
+    }
+
+    .feature-card p {
+      font-size: 11px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
   }
+
+  .get1 {
+    width: 320px;
+    height: 130px;
+    border-radius: 5px;
+    background: #ffffff;
+    /* background: url(./realestate/avi-werde-hHz4yrvxwlA-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #fff;
+    color: #101010;
+    padding: 0 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 75%;
+    left: 70%;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+  }
+
 
   .hero-image-txt {
     width: 320px;
