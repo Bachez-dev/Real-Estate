@@ -244,7 +244,7 @@ body {
       margin-bottom: 1rem;
     }
 
-    .icon i{
+    .icon i {
       font-size: 11px;
     }
 
@@ -261,30 +261,6 @@ body {
       opacity: 0.9;
     }
   }
-
-  .get1 {
-    width: 320px;
-    height: 130px;
-    border-radius: 5px;
-    background: #ffffff;
-    /* background: url(./realestate/avi-werde-hHz4yrvxwlA-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid #fff;
-    color: #101010;
-    padding: 0 20px;
-    font-weight: 600;
-    position: absolute;
-    top: 75%;
-    left: 70%;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-  }
-
 
   .hero-image-txt {
     width: 320px;
@@ -324,6 +300,49 @@ body {
       line-height: 1.5;
     }
 
+  }
+}
+
+.get1 {
+  width: 320px;
+  height: 115px;
+  border-radius: 5px;
+  background: #ffffff;
+  display: flex;
+  gap: 20px;
+  border: 1px solid #fff;
+  color: #101010;
+  font-weight: 600;
+  position: absolute;
+  top: 75%;
+  left: 70%;
+  border: none;
+  font-size: 11px;
+  padding: 5px;
+
+  .get1-img {
+    width: 150px;
+    height: 105px;
+    background: url(./realestate/avi-werde-hHz4yrvxwlA-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+
+  .get1-txt {
+    width: calc(320px - 170px);
+    height: 115px;
+
+    h2 {
+      font-size: 12px;
+      color: #101010;
+      margin-bottom: 10px;
+    }
+
+    p{
+      margin-bottom: 10px;
+    }
   }
 }
 
