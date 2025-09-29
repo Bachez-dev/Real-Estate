@@ -1,312 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Real Estate Listings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Real Estate</title>
   <style>
-    .first-section {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 40px 0;
-    }
-
-    .section-container {
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .section-heading {
-      width: 100%;
-      height: 130px;
-      color: #101010;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .section-heading h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    .section-heading p {
-      font-size: 14px;
-      color: #555;
-      margin-top: 20px;
-    }
-
-    .cards-container {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
-
-    .card {
-      min-width: 300px;
-      height: 370px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .card-image {
-      width: 100%;
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card1 {
-      background-image: url('../realestate/brian-babb-XbwHrt87mQ0-unsplash.jpg');
-    }
-
-    .card2 {
-      background-image: url('../realestate/clay-banks-yqozBsi5ioc-unsplash.jpg');
-    }
-
-    .card3 {
-      background-image: url('../realestate/elite-prop-hmlP-v0vJ5o-unsplash.jpg');
-    }
-
-    .card4 {
-      background-image: url('../realestate/francesca-tosolini-6japTIjUQoI-unsplash.jpg');
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
       color: #333;
     }
 
-    .card-content p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.5;
+    header {
+      background: #004aad;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
     }
 
-    .btn {
-      background: #101010;
-      border-radius: 5px;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-form, .contact-info {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2,
+    .contact-info h2 {
+      margin-top: 0;
+      color: #004aad;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      margin-top: 1rem;
+      padding: 0.8rem;
       border: none;
+      border-radius: 4px;
+      background: #004aad;
       color: #fff;
-      padding: 10px 20px;
-      font-size: 11px;
-      margin-top: 30px;
+      font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
-    .btn:hover {
-      background: rgba(0, 0, 0, 0.7);
+    .contact-form button:hover {
+      background: #003580;
     }
 
-    /* Pagination */
-    .pagination {
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+
+    .map-container {
+      width: 1000px;
+      height: 400px;
+      margin: 2rem auto;
+      background: #ddd;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 5px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .pagination a,
-    .pagination span {
-      padding: 8px 12px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #333;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .pagination a:hover {
-      background: #0077ff;
+    footer {
+      background: #004aad;
       color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
 
-    .pagination a.active {
-      background: #0077ff;
-      color: #fff;
-      border: 1px solid #0077ff;
-    }
-
-    .pagination span {
-      cursor: default;
-      background: #f0f0f0;
-    }
-
-    /* Disabled buttons */
-    .pagination a.disabled {
-      color: #aaa;
-      border-color: #eee;
-      cursor: not-allowed;
-      background: #f9f9f9;
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .map-container {
+        width: 100%;
+        height: 300px;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Get in touch today!</p>
+  </header>
 
-  <section class="first-section">
-    <div class="section-container">
-      <div class="section-heading">
-        <h2>Turn the house you imagine into the house you live in.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ut?.</p>
-      </div>
+  <section class="contact-container">
+    <div class="contact-form">
+      <h2>Send us a message</h2>
+      <form id="contactForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
 
-      <!-- Cards will be injected here -->
-      <div class="cards-container" id="cards-container"></div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your email..." required>
 
-      <!-- Pagination -->
-      <div class="pagination" id="pagination"></div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone...">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h2>Our Office</h2>
+      <p><strong>Address:</strong> 123 Real Estate Ave, Nairobi, Kenya</p>
+      <p><strong>Phone:</strong> +254 712 345 678</p>
+      <p><strong>Email:</strong> info@realestate.com</p>
+      <p><strong>Working Hours:</strong> Mon - Fri: 9am - 6pm</p>
     </div>
   </section>
 
+  <!-- Map Container -->
+  <div class="map-container" id="map">
+    <p>Map will be displayed here</p>
+  </div>
 
+  <footer>
+    <p>&copy; 2025 Real Estate Company. All Rights Reserved.</p>
+  </footer>
 
   <script>
-    const properties = [
-      { title: "Modern Family Home", details: "4 Beds • 3 Baths • 2500 sqft", price: "$450,000", imageClass: "card1" },
-      { title: "Luxury Villa", details: "5 Beds • 4 Baths • 4000 sqft", price: "$1,200,000", imageClass: "card2" },
-      { title: "Downtown Apartment", details: "2 Beds • 2 Baths • 1200 sqft", price: "$350,000", imageClass: "card3" },
-      { title: "Cozy Cottage", details: "3 Beds • 2 Baths • 1800 sqft", price: "$300,000", imageClass: "card4" }
-    ];
-
-    // Duplicate to simulate many listings
-    let listings = [];
-    for (let i = 0; i < 200; i++) {
-      listings.push({ ...properties[i % properties.length] });
-    }
-
-    const itemsPerPage = 18;
-
-    function renderCards(page) {
-      const container = document.getElementById("cards-container");
-      container.innerHTML = "";
-
-      const start = (page - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      const pageItems = listings.slice(start, end);
-
-      pageItems.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-        <div class="card-image ${item.imageClass}"></div>
-        <div class="card-content">
-          <h3>${item.title}</h3>
-          <p>${item.details}</p>
-          <p>${item.price}</p>
-          <a href="#"><button class="btn">View Details</button></a>
-        </div>
-      `;
-        container.appendChild(card);
-      });
-
-      renderPagination(page);
-      updateUrl(page);
-    }
-
-    function renderPagination(currentPage) {
-      const totalPages = Math.ceil(listings.length / itemsPerPage);
-      const container = document.getElementById("pagination");
-      container.innerHTML = "";
-
-      function createPageLink(page, text = page, disabled = false) {
-        const link = document.createElement("a");
-        link.textContent = text;
-        if (page === currentPage) link.classList.add("active");
-        if (disabled) {
-          link.classList.add("disabled");
-        } else {
-          link.onclick = () => renderCards(page);
-        }
-        return link;
-      }
-
-      function createEllipsis() {
-        const span = document.createElement("span");
-        span.textContent = "…";
-        return span;
-      }
-
-      // Prev button
-      container.appendChild(
-        createPageLink(currentPage - 1, "« Prev", currentPage === 1)
-      );
-
-      // Always show first page
-      container.appendChild(createPageLink(1));
-
-      if (currentPage <= 3) {
-        for (let i = 2; i <= Math.min(3, totalPages - 1); i++) {
-          container.appendChild(createPageLink(i));
-        }
-        if (totalPages > 4) container.appendChild(createEllipsis());
-      } else if (currentPage > 3 && currentPage < totalPages - 2) {
-        container.appendChild(createEllipsis());
-        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-          container.appendChild(createPageLink(i));
-        }
-        container.appendChild(createEllipsis());
-      } else {
-        container.appendChild(createEllipsis());
-        for (let i = totalPages - 2; i < totalPages; i++) {
-          if (i > 1) container.appendChild(createPageLink(i));
-        }
-      }
-
-      // Always show last page
-      if (totalPages > 1) container.appendChild(createPageLink(totalPages));
-
-      // Next button
-      container.appendChild(
-        createPageLink(currentPage + 1, "Next »", currentPage === totalPages)
-      );
-    }
-
-    function updateUrl(page) {
-      const url = new URL(window.location);
-      url.searchParams.set("page", page);
-      history.pushState({ page }, "", url);
-    }
-
-    function getPageFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      return parseInt(params.get("page")) || 1;
-    }
-
-    window.addEventListener("popstate", (event) => {
-      const page = event.state?.page || getPageFromUrl();
-      renderCards(page);
+    // Form submission handler
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you for contacting us! We will get back to you soon.");
+      this.reset();
     });
-
-    // Initial load
-    renderCards(getPageFromUrl());
   </script>
-
-
 </body>
-
 </html>
